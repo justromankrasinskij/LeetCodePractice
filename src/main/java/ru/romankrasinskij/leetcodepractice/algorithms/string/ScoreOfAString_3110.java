@@ -23,19 +23,19 @@ public class ScoreOfAString_3110 {
         return charCodeList;
     }
 
-    private static List<Integer> getDifferentExpressionList() {
-        List<Integer> differentExpressionList = new ArrayList<>();
+    private static List<Integer> getDifferenceExpressionList() {
+        List<Integer> differenceExpressionList = new ArrayList<>();
 
         for (int i = 0, j = 0; i < (charCount - 1); i++) {
             int differenceExpression = (int) Math.abs((getCharCodeList().get(j) - getCharCodeList().get(++j)));
-            differentExpressionList.add(differenceExpression);
+            differenceExpressionList.add(differenceExpression);
         }
 
-        return differentExpressionList;
+        return differenceExpressionList;
     }
 
     private static int getScoreOfAString(String s) {
-        int sum = getDifferentExpressionList().stream().mapToInt(Integer::intValue).sum();
+        int sum = getDifferenceExpressionList().stream().mapToInt(Integer::intValue).sum();
         return sum;
     }
 }
